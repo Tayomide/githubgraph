@@ -1,32 +1,27 @@
-import React from 'react'
+import { useRef } from 'react'
 import EastIcon from '@mui/icons-material/East';
 import styled from 'styled-components';
+import {useNavigate} from "react-router-dom"
 
 export const ActionBar = () => {
+    const user = useRef()
+    const year = useRef()
+    const navigate = useNavigate();
+    const navigateTo = () =>{
+      if(user.current.value && year.current.value)navigate(`/${user.current.value}/${year.current.value}`)
+    };
   return (
     <Container>
       <div>
         <span className='at'>@</span>
-        <input type="text" placeholder='github_username'></input>
+        <input type="text" placeholder='github_username' ref={user} />
         <span className='demacate'></span>
-        <select>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <option value="2019">2019</option>
-          <option value="2018">2018</option>
-          <option value="2017">2017</option>
-          <option value="2016">2016</option>
-          <option value="2015">2015</option>
-          <option value="2014">2014</option>
-          <option value="2013">2013</option>
-          <option value="2012">2012</option>
-          <option value="2011">2011</option>
-          <option value="2010">2010</option>
-          <option value="2009">2009</option>
-          <option value="2008">2008</option>
+        <select ref={year}>
+          {
+            (new Array(15).fill((new Date()).getFullYear())).map((year, key) => <option value={year - key} key={key}>{year-key}</option>)
+          }
         </select>
-        <button>Create a Skyline <EastIcon /></button>
+        <button onClick={navigateTo}>Create a Skyline <EastIcon /></button>
       </div>
     </Container>
   )
@@ -86,9 +81,13 @@ const Container = styled.div`
       background: transparent;
       width: 3.5em;
       margin-right: 0.4em;
+      option{
+        color: black;
+      }
     }
     button{
       color: #FFFFFF;
+      cursor: pointer;
       background-image: linear-gradient(90deg,#db469f,#7891d5);
       border-radius: 0.833333em; // 1em
       outline: 0;
