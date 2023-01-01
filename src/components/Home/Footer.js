@@ -45,5 +45,10 @@ const Container = styled.footer`
         color: #B5B6BC;
       }
     }
+    @media screen and (max-width: 370px){
+      flex-direction: column-reverse;
+      align-items: center;
+      padding: 0;
+    }
   }
 `

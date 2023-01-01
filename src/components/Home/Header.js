@@ -22,4 +22,9 @@ const Container = styled(Link)`
   svg{
     margin-right: 0.28em
   }
+  @media screen and (max-width: 600px){
+    /* left: 1.5rem;
+    top: 1em; */
+    display: none;
+  }
 `

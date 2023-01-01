@@ -11,7 +11,7 @@ export const Model = ({user, year}) => {
   useEffect(() => {
     GithubAPI.getCommitGraph(user, parseInt(year))
     .then(response => response.json())
-    .then(response => {console.log(user, year, response);setCommitGraph(response.data.user.contributionsCollection.contributionCalendar.weeks)})
+    .then(response => {setCommitGraph(response.data.user.contributionsCollection.contributionCalendar.weeks)})
   }, [GithubAPI, user, year])
 
   return (

@@ -18,7 +18,7 @@ const Container = styled.div`
   height: calc(100% - 3em);
   padding-top: 2.5em;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   position: relative;
   @keyframes gradient-animate {
     50%{
@@ -42,5 +42,11 @@ const Container = styled.div`
     max-width: 26.166667em;
     text-align: center;
     word-spacing: 0.03em;
+  }
+  @media screen and (max-width: 800px){
+    font-size: 0.84em;
+  }
+  @media screen and (max-width: 600px){
+    display: none;
   }
 `

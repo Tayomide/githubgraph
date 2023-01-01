@@ -104,4 +104,17 @@ const Container = styled.div`
       }
     }
   }
+  @media screen and (max-width: 1160px){
+    width: max-content;
+    max-width: 90%;
+    div button{
+      padding: 0 0.8em;
+      svg{
+        margin: 0;
+      }
+    }
+    div select{
+      width: 4em;
+    }
+  }
 `
