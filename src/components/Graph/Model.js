@@ -33,6 +33,14 @@ export const Model = ({user, year}) => {
         { user.toLowerCase() || "loading..."}
         <meshPhongMaterial color="#494a56" />
       </Text3D>
+      <Text3D font="/helvetiker_regular.typeface.json"
+        scale={0.3}
+        rotation={[-Math.PI*(0.5 - 0.35241638235), 0, 0]}
+        position={[commitGraph?.length * (0.3 / 4) -1, -1.4 * 0.3, 4 * 0.3]}
+      >
+        { year || "loading..."}
+        <meshPhongMaterial color="#494a56" />
+      </Text3D>
     </>
   )
 }
