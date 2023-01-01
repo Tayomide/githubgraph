@@ -19,12 +19,11 @@ const Container = styled(Link)`
   position: absolute;
   text-decoration: none;
   top: 3rem;
+  z-index: 5;
   svg{
     margin-right: 0.28em
   }
   @media screen and (max-width: 600px){
-    /* left: 1.5rem;
-    top: 1em; */
     display: none;
   }
 `
